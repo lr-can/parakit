@@ -18,7 +18,7 @@ From: quay.io/jmonlong/parakit:1.0.0
     git clone https://github.com/lr-can/parakit.git /opt/src/parakit
     pip install -e /opt/src/parakit --no-deps
     mkdir -p /data
-    cp -r /opt/src/parakit/data /data
+    cp -r /opt/src/parakit/data/* /data
 
 %environment
     # Prioritise fork in PYTHONPATH
