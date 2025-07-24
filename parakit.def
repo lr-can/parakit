@@ -5,16 +5,20 @@ From: quay.io/jmonlong/parakit:1.0.0
     Author          Lorcan
     Description     "Parakit + local fork (editable)"
 
-# Copy local source into the image
-%files
-    ~/gitlab/parakit   /opt/src/parakit
-
 %post
     set -eux
     # Ensure recent pip
     python3 -m pip install --no-cache-dir --upgrade pip
-    # Install fork – editable, keep existing deps
+
+    # Making sure app directory is writable for toil usage afterwards
+    mkdir -p /app
+    chmod a+w /app
+
+    # Install fork from github
+    git clone https://github.com/lr-can/parakit.git /opt/src/parakit
     pip install -e /opt/src/parakit --no-deps
+    mkdir -p /data
+    cp -r /opt/src/parakit/data /data
 
 %environment
     # Prioritise fork in PYTHONPATH
@@ -31,6 +35,6 @@ print(os.path.abspath(os.path.dirname(p.__file__)))
 PY
 
 %runscript
-    echo "Parakit container with local fork"
+    echo "Parakit container with local fork to adapt to cyp2d6 analysis"
     exec parakit "$@"
 
