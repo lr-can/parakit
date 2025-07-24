@@ -19,6 +19,13 @@ From: quay.io/jmonlong/parakit:1.0.0
     pip install -e /opt/src/parakit --no-deps
     mkdir -p /data
     cp -r /opt/src/parakit/data/* /data
+    # Install R and required packages
+    apt-get update && apt-get install -y --no-install-recommends \
+        r-base r-base-dev libcurl4-openssl-dev libxml2-dev libssl-dev
+
+    Rscript -e 'install.packages(c("dplyr", "readr", "stringr", "tidyr", "ggplot2", "RColorBrewer", "cowplot", "rjson"), repos="http://cran.rstudio.com")'
+    Rscript -e 'if (!requireNamespace("BiocManager", quietly = TRUE)) install.packages("BiocManager")'
+    Rscript -e 'BiocManager::install("GenomicRanges")'
 
 %environment
     # Prioritise fork in PYTHONPATH
