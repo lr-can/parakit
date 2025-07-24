@@ -1,0 +1,2 @@
+JAHEOR010000121.1	ensembl	gene	8696896	8706142	.	+	.	ID=gene:ENSG05160019928;Name=CYP2D7;biotype=polymorphic_pseudogene;description=cytochrome P450 family 2 subfamily D member 7 (gene/pseudogene) [Source:HGNC Symbol%3BAcc:HGNC:2624]%3Bparent_gene_display_xref%3DCYP2D7;gene_id=ENSG05160019928;version=1
+JAHEOR010000121.1	ensembl	gene	8715503	8719869	.	+	.	ID=gene:ENSG05160019990;Name=CYP2D6;biotype=protein_coding;description=cytochrome P450 family 2 subfamily D member 6 [Source:HGNC Symbol%3BAcc:HGNC:2625]%3Bparent_gene_display_xref%3DCYP2D6;gene_id=ENSG05160019990;version=1

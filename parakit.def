@@ -1,0 +1,36 @@
+Bootstrap: docker
+From: quay.io/jmonlong/parakit:1.0.0
+
+%labels
+    Author          Lorcan
+    Description     "Parakit + local fork (editable)"
+
+# Copy local source into the image
+%files
+    ~/gitlab/parakit   /opt/src/parakit
+
+%post
+    set -eux
+    # Ensure recent pip
+    python3 -m pip install --no-cache-dir --upgrade pip
+    # Install fork – editable, keep existing deps
+    pip install -e /opt/src/parakit --no-deps
+
+%environment
+    # Prioritise fork in PYTHONPATH
+    export PYTHONPATH=/opt/src/parakit:${PYTHONPATH}
+    export LC_ALL=C.UTF-8
+    export LANG=C.UTF-8
+
+%test
+    echo "[TEST] Import fork path"
+    python3 - <<'PY'
+import importlib, os
+p = importlib.import_module("parakit")
+print(os.path.abspath(os.path.dirname(p.__file__)))
+PY
+
+%runscript
+    echo "Parakit container with local fork"
+    exec parakit "$@"
+

@@ -1,13 +1,13 @@
 {
-    "ref_fa": "hg38.fa",
-    "c1": "chr6:31980532-32013273",
-    "c2": "chr6:32013273-32046127",
+    "ref_fa": "/easy_access/genome38.fa",
+    "c1": "chr22:42117000-42121000",
+    "c2": "chr22:42126400-42130900",
     "flank_size": 300000,
-    "method": "mc",
-    "label": "rccx.grch38_hprc.mc",
-    "gene_annot": "CYP21A2.gencodev43.nearby_genes.tsv",
-    "clinvar": "CYP21A2.pathogenic.variant_summary.2024_09_03.tsv",
-    "hprc_agc": "HPRC-yr1.agc",
-    "hprc_coords": "hprc.cyp21a.coords.tsv",
-    "genes": ["CYP21A2", "CYP21A1P"]
+    "method": "mc_collapse",
+    "hprc_agc": "/data/HPRC-yr1.agc",
+    "hprc_coords": "/data/hprc.cyp2d6.haps.coords.tsv",
+    "clinvar": "/data/CYP2D6.pathogenic.variant_summary.2025_07_22.tsv",
+    "gene_annot": "/data/CYP2D6.gencodev43.nearby_genes.tsv",
+    "label": "cyp2d6.grch38_hprc.mcc",
+    "genes": ["CYP2D6", "CYP2D7"]
 }

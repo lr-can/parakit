@@ -1,0 +1,2 @@
+JAGYVU010000059.1	ensembl	gene	4024881	4029248	.	-	.	ID=gene:ENSG05090002446;Name=CYP2D6;biotype=protein_coding;description=cytochrome P450 family 2 subfamily D member 6 [Source:HGNC Symbol%3BAcc:HGNC:2625]%3Bparent_gene_display_xref%3DCYP2D6;gene_id=ENSG05090002446;version=1
+JAGYVU010000059.1	ensembl	gene	4038586	4047839	.	-	.	ID=gene:ENSG05090002387;Name=CYP2D7;biotype=polymorphic_pseudogene;description=cytochrome P450 family 2 subfamily D member 7 (gene/pseudogene) [Source:HGNC Symbol%3BAcc:HGNC:2624]%3Bparent_gene_display_xref%3DCYP2D7;gene_id=ENSG05090002387;version=1

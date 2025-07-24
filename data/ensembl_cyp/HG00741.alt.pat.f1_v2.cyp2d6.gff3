@@ -1,0 +1,2 @@
+JAHALY010000111.1	ensembl	gene	8703468	8712721	.	+	.	ID=gene:ENSG04995043241;Name=CYP2D7;biotype=polymorphic_pseudogene;description=cytochrome P450 family 2 subfamily D member 7 (gene/pseudogene) [Source:HGNC Symbol%3BAcc:HGNC:2624]%3Bparent_gene_display_xref%3DCYP2D7;gene_id=ENSG04995043241;version=1
+JAHALY010000111.1	ensembl	gene	8722059	8726425	.	+	.	ID=gene:ENSG04995043303;Name=CYP2D6;biotype=protein_coding;description=cytochrome P450 family 2 subfamily D member 6 [Source:HGNC Symbol%3BAcc:HGNC:2625]%3Bparent_gene_display_xref%3DCYP2D6;gene_id=ENSG04995043303;version=1

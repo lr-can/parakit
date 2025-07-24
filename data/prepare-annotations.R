@@ -17,9 +17,7 @@ df = read.table('variant_summary.txt.gz', sep='\t', colClasses=colc, header=TRUE
 ## keep variants with either the word "Pathogenic" or "Conflicting" in the
 ## clinical significance column, and the information based on the GRCh38
 ## reference genome.
-df.p = df %>% filter(sapply(strsplit(GeneSymbol, ';'), function(gg) any(gg == 'CYP21A2')), 
-                     grepl("Conflicting", ClinicalSignificance) |
-                     grepl("Pathogenic", ClinicalSignificance),
+df.p = df %>% filter(sapply(strsplit(GeneSymbol, ';'), function(gg) any(gg == 'CYP2D6' | gg == 'CYP2D7')) &
                      Assembly=='GRCh38') %>%
   mutate(nuc.change=gsub('.*:c.([^ ]*).*', '\\1', Name),
          prot.change=gsub('.*:.* \\(p.(.*)\\)', '\\1', Name),
@@ -34,7 +32,7 @@ sample_n(df.p, 10)
 cv.date = scan('variant_summary.txt.date', '', quiet=TRUE)
 
 write.table(df.p, row.names=FALSE, quote=FALSE, sep='\t',
-            file=paste0('CYP21A2.pathogenic.variant_summary.', cv.date, '.tsv'))
+            file=paste0('CYP2D6.pathogenic.variant_summary.', cv.date, '.tsv'))
 
 ##
 ## gene annotation
@@ -56,7 +54,7 @@ df = df %>% mutate(gene_name=gsub('.*gene_name ([^;]+).*', '\\1', info))
 ## either around a position
 ## df %>% filter(chr=='chr6', abs(start-32040869) < 6e4, type=='gene')
 ## or specify gene names directly
-sel.genes = c('C4A', 'CYP21A1P', 'TNXA', 'C4B', 'CYP21A2', 'TNXB')
+sel.genes = c('CYP2D6', 'CYP2D7')
 
 ## keep information about the UTR/exons and coding sequence
 sel.types = c('gene', 'exon', 'utr', 'CDS')
@@ -65,4 +63,4 @@ df.g = df %>% filter(gene_name %in% sel.genes, type %in% sel.types) %>%
 
 ## write annotation file
 df.g %>% select(-info, -source) %>% unique %>%
-  write.table('CYP21A2.gencodev43.nearby_genes.tsv', sep='\t', row.names=FALSE, quote=FALSE)
+  write.table('CYP2D6.gencodev43.nearby_genes.tsv', sep='\t', row.names=FALSE, quote=FALSE)

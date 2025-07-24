@@ -1,0 +1,2 @@
+22	ensembl	gene	31688372	31692738	.	-	.	ID=gene:ENSG05520024784;Name=CYP2D6;biotype=protein_coding;description=cytochrome P450 family 2 subfamily D member 6 [Source:HGNC Symbol%3BAcc:HGNC:2625]%3Bparent_gene_display_xref%3DCYP2D6;gene_id=ENSG05520024784;version=1
+22	ensembl	gene	31702072	31711332	.	-	.	ID=gene:ENSG05520024460;Name=CYP2D7;biotype=polymorphic_pseudogene;description=cytochrome P450 family 2 subfamily D member 7 (gene/pseudogene) [Source:HGNC Symbol%3BAcc:HGNC:2624]%3Bparent_gene_display_xref%3DCYP2D7;gene_id=ENSG05520024460;version=1
