@@ -1,7 +1,8 @@
 *~
 __pycache__
 */raw_annotation/*
-.snakemake/*
+*.snakemake/*
 *gencode*
 */variant_summary*
 *.agc
+*/cat_cyp/*
